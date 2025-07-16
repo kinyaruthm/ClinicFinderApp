@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "873366285246",
+    "project_id": "clinicfinder-b4bef",
+    "storage_bucket": "clinicfinder-b4bef.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:873366285246:android:38b2d4e1f88fb3e9c227ef",
+        "android_client_info": {
+          "package_name": "com.clinicfinder"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC5_uOQxybNWT2j-IOjniVh59ZZNgJUX7c"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
