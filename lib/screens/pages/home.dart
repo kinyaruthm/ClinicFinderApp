@@ -5,6 +5,7 @@ import '/screens/pages/location_service.dart';
 import '/screens/pages/clinic_details_page.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'dart:math';
+import 'package:clinicfinder/components.dart';
 
 //landing page that displays all available clinics already saved in the database
 class HomePage extends StatefulWidget {
@@ -18,6 +19,7 @@ class _HomePageState extends State<HomePage> {
   final TextEditingController _searchController = TextEditingController();
   String _location = "Fetching location...";
   Position? _userPosition;
+
   List<Map<String, dynamic>> _nearbyClinics = [];
 
   @override
@@ -225,22 +227,23 @@ class _HomePageState extends State<HomePage> {
             Row(
               children: [
                 Expanded(
-                  child: TextField(
+                  //reused textfield
+                  child: AppTextField(
                     controller: _searchController,
-                    decoration: InputDecoration(
-                      labelText: 'Search location',
-                      border: const OutlineInputBorder(),
-                      isDense: true,
-                      suffixIcon: IconButton(
-                        icon: const Icon(Icons.clear),
-                        onPressed: () {
-                          _searchController.clear();
-                          if (_userPosition != null) {
-                            _loadClinicsFromFirestore(_userPosition!);
-                          }
-                        },
-                      ),
-                    ),
+                    //decoration: InputDecoration(
+                    label: 'Search location',
+                    // border: const OutlineInputBorder(),
+                    // isDense: true,
+                    //icon: IconButton(
+                    //icon: const Icon(icon.),
+                    // onPressed: () {
+                    //   _searchController.clear();
+                    //   if (_userPosition != null) {
+                    //     _loadClinicsFromFirestore(_userPosition!);
+                    //   }
+                    // },
+                    // ),
+                    // ),
                   ),
                 ),
                 const SizedBox(width: 8),
@@ -252,6 +255,7 @@ class _HomePageState extends State<HomePage> {
             ),
             const SizedBox(height: 12),
             //uploads the sample clinics once
+
             // Upload button -commented to prevent uploading twice
             // ElevatedButton.icon(
             //   onPressed: uploadSampleClinics,

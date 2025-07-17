@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:clinicfinder/components.dart';
 
 class RegisterPage extends StatefulWidget {
   const RegisterPage({Key? key}) : super(key: key);
@@ -71,14 +72,42 @@ class _RegisterPageState extends State<RegisterPage> {
                 Text(_error!, style: TextStyle(color: Colors.red)),
               TextFormField(
                 controller: _nameController,
-                decoration: InputDecoration(labelText: 'Full Name'),
+                decoration: InputDecoration(
+                  labelText: 'Full Name',
+                  filled: true,
+                  fillColor: fillerColor,
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(12),
+                    borderSide: BorderSide.none,
+                  ),
+                  focusedBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(12),
+                    borderSide: const BorderSide(
+                      color: Color.fromARGB(255, 87, 148, 194),
+                    ),
+                  ),
+                ),
                 validator: (value) =>
                     value == null || value.isEmpty ? 'Enter your name' : null,
               ),
               SizedBox(height: 16),
               TextFormField(
                 controller: _emailController,
-                decoration: InputDecoration(labelText: 'Email'),
+                decoration: InputDecoration(
+                  labelText: 'Email',
+                  filled: true,
+                  fillColor: fillerColor,
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(12),
+                    borderSide: BorderSide.none,
+                  ),
+                  focusedBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(12),
+                    borderSide: const BorderSide(
+                      color: Color.fromARGB(255, 87, 148, 194),
+                    ),
+                  ),
+                ),
                 keyboardType: TextInputType.emailAddress,
                 validator: (value) => value != null && value.contains('@')
                     ? null
@@ -87,7 +116,21 @@ class _RegisterPageState extends State<RegisterPage> {
               SizedBox(height: 16),
               TextFormField(
                 controller: _passwordController,
-                decoration: InputDecoration(labelText: 'Password'),
+                decoration: InputDecoration(
+                  labelText: 'Password',
+                  filled: true,
+                  fillColor: fillerColor,
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(12),
+                    borderSide: BorderSide.none,
+                  ),
+                  focusedBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(12),
+                    borderSide: const BorderSide(
+                      color: Color.fromARGB(255, 87, 148, 194),
+                    ),
+                  ),
+                ),
                 obscureText: true,
                 validator: (value) => value != null && value.length >= 6
                     ? null
